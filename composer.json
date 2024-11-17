@@ -32,9 +32,9 @@
     },
     "require-dev": {
         "laminas/laminas-coding-standard": "^3.0.1",
-        "laminas/laminas-filter": "~2.23.0",
-        "laminas/laminas-i18n": "~2.19.0",
-        "laminas/laminas-servicemanager": "~3.19.0",
+        "laminas/laminas-filter": "^2.39.0",
+        "laminas/laminas-i18n": "^2.29.0",
+        "laminas/laminas-servicemanager": "^3.23.0",
         "phpunit/phpunit": "^10.5.38"
     },
     "conflict": {

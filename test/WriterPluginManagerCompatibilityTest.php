@@ -18,7 +18,7 @@ class WriterPluginManagerCompatibilityTest extends TestCase
     /**
      * @return WriterPluginManager
      */
-    protected function getPluginManager()
+    protected static function getPluginManager()
     {
         return new WriterPluginManager(new ServiceManager());
     }
@@ -37,13 +37,5 @@ class WriterPluginManagerCompatibilityTest extends TestCase
     protected function getInstanceOf()
     {
         return AbstractWriter::class;
-    }
-
-    public function testLoadingInvalidElementRaisesException()
-    {
-        $manager = $this->getPluginManager();
-        $manager->setInvokableClass('test', \InvalidArgumentException::class);
-        $this->expectException($this->getServiceNotFoundException());
-        $manager->get('test');
     }
 }

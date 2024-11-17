@@ -18,7 +18,7 @@ class ReaderPluginManagerCompatibilityTest extends TestCase
     /**
      * @return ReaderPluginManager
      */
-    protected function getPluginManager()
+    protected static function getPluginManager()
     {
         return new ReaderPluginManager(new ServiceManager());
     }
@@ -37,13 +37,5 @@ class ReaderPluginManagerCompatibilityTest extends TestCase
     protected function getInstanceOf()
     {
         return ReaderInterface::class;
-    }
-
-    public function testLoadingInvalidElementRaisesException()
-    {
-        $manager = $this->getPluginManager();
-        $manager->setInvokableClass('test', \InvalidArgumentException::class);
-        $this->expectException($this->getServiceNotFoundException());
-        $manager->get('test');
     }
 }
