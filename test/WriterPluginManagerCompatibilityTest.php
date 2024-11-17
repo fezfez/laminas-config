@@ -38,4 +38,12 @@ class WriterPluginManagerCompatibilityTest extends TestCase
     {
         return AbstractWriter::class;
     }
+
+    public function testLoadingInvalidElementRaisesException()
+    {
+        $manager = $this->getPluginManager();
+        $manager->setInvokableClass('test', \InvalidArgumentException::class);
+        $this->expectException($this->getServiceNotFoundException());
+        $manager->get('test');
+    }
 }
